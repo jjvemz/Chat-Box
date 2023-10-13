@@ -15,7 +15,7 @@ Before getting started, make sure you have the following installed:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/jjvemz/Web-Scraper
+   git clone https://github.com/jjvemz/Web-Scraper.git
    cd web-scraper-mongodb
    ```
 Install project dependencies:
