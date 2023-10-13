@@ -14,12 +14,12 @@ Before getting started, make sure you have the following installed:
 
 1. Clone the repository:
 
-   ```
+   ```bash
    git clone https://github.com/jjvemz/Web-Scraper.git
    cd web-scraper-mongodb
    ```
 Install project dependencies:
-  ```
+  ```bash
   npm install
   ```
 
@@ -27,7 +27,7 @@ Install project dependencies:
 
 To run the project, use the following command:
 
-  ```
+  ```bash
   npm run dev
   ```
 This will initiate the Chat app 
