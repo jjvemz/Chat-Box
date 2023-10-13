@@ -7,4 +7,22 @@ const server = app.listen(PORT, ()=>{
     console.log(`Server on port ${PORT}`)
 })
 
-app.use(express.static(path.join(__dirname,'public')))
+const io = require('socket.io')(server)
+
+app.use(express.static(path.join(__dirname,'public')));
+
+let socketsConected = new Set();
+
+io.on('connection', onConnected)
+
+function onConnected(socket){
+    console.log('Socket connected', socket.id)
+    socketsConected.add(socket.id)
+    io.emit('clients-total', socketsConected.size)
+
+    socket.on('disconnect', () => {
+        console.log('Socket disconnected', socket.id)
+        socketsConected.delete(socket.id)
+        io.emit('clients-total', socketsConected.size)
+  })
+}
